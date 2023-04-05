@@ -6,6 +6,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { sendMessage } from "../../helpers/aws/SQSHelper";
 
 function MovieDetailModal(props) {
   const { modalState, handleCloseModal } = props;
@@ -14,6 +15,7 @@ function MovieDetailModal(props) {
   const loadData = async () => {
     const result = await fetchMovieDetail(modalState.id);
     setMovieDetail(result);
+    sendMessage(result);
   };
 
   useEffect(() => {
