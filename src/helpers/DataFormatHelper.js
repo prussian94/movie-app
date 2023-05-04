@@ -8,5 +8,7 @@ export const formatSqsData = (data) => {
     productionCompanies: data.production_companies,
     productionCountries: data.production_countries,
     spokenLanguages: data.spoken_languages,
+    originalTitle: data.original_title,
+    title: data.title,
   };
 };
